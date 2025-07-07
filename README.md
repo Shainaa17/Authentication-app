@@ -46,12 +46,14 @@ README.md → You’re reading it :)
 ---
 
 Security Notes
+
 JWT tokens stored in httpOnly cookies
 Passwords hashed with bcrypt
 OTPs expire after timeout
 Environment-based secure cookies (SameSite, Secure)
 
 🧪 Future Improvements
+
 Add Google OAuth
 Rate-limit OTP requests
 Add resend OTP feature
