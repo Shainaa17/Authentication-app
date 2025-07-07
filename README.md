@@ -45,7 +45,7 @@ README.md → You’re reading it :)
 
 ---
 
-Security Notes
+**Security Notes:-**
 
 
 JWT tokens stored in httpOnly cookies
@@ -58,7 +58,7 @@ Environment-based secure cookies (SameSite, Secure)
 
 
 
-🧪 Future Improvements
+**🧪 Future Improvements:-**
 
 
 Add Google OAuth
@@ -68,4 +68,6 @@ Rate-limit OTP requests
 Add resend OTP feature
 
 UI themes (Dark/Light)
+
+
 
