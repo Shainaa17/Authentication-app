@@ -59,9 +59,7 @@ const Navbar = () => {
                   {!userData.isAccountVerified && <li onClick={sendVerificationOtp} className="dropdown-item">Verify Email</li>}
                   <li
                     className="dropdown-item"
-                    onClick={() => 
-                     {logout}
-                    }
+                    onClick={() => logout() }
                   >
                     Logout
                   </li>
