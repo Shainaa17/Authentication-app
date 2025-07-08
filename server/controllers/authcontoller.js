@@ -40,8 +40,18 @@ export const register = async (req, res) => {
       subject: 'Welcome to Great Stack',
       text   : `Welcome – your account has been created with ${email}!`,
     });
-
-    return res.json({ success: true });
+    return res.json({
+      success: true,
+      message: 'Registration successful!', // A helpful message
+      user: { // Send a user object containing ID and name/email if needed
+          id: user._id,
+          name: user.name,
+          email: user.email,
+      },
+      // Optionally, you could send the token here too, but if using httpOnly cookies, it's less critical.
+      // However, sending it here can be useful for initial state setup on the frontend
+      // token: token // Uncomment if you also want the token in the body for direct JS access (less secure for token itself)
+  });
   } catch (err) {
     return res.status(500).json({ success: false, message: err.message });
   }
@@ -68,7 +78,20 @@ export const login = async (req, res) => {
       maxAge  : 7 * 24 * 60 * 60 * 1000,
     });
 
-    return res.json({ success: true });
+    
+
+    return res.json({
+      success: true,
+      message: 'Registration successful!', // A helpful message
+      user: { // Send a user object containing ID and name/email if needed
+          id: user._id,
+          name: user.name,
+          email: user.email,
+      },
+      // Optionally, you could send the token here too, but if using httpOnly cookies, it's less critical.
+      // However, sending it here can be useful for initial state setup on the frontend
+      // token: token // Uncomment if you also want the token in the body for direct JS access (less secure for token itself)
+  });
   } catch (err) {
     return res.status(500).json({ success: false, message: err.message });
   }
