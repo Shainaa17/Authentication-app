@@ -2,20 +2,23 @@
 
 A complete authentication system built with **MERN stack (MongoDB, Express, React, Node.js)** featuring:
 
-- 🔑 Login / Signup
-- ✅ Email Verification (via OTP)
-- 🔄 Password Reset (via OTP)
-- 🍪 JWT Auth with Secure Cookies
-- 📧 Nodemailer Email Integration
-- ⚛️ React Context for Auth State
+- 🔑 Login / Signup  
+- ✅ Email Verification (via OTP)  
+- 🔄 Password Reset (via OTP)  
+- 🍪 JWT Auth with Secure Cookies  
+- 📧 Nodemailer Email Integration  
+- ⚛️ React Context for Auth State  
 
 ---
 
 ## 📁 Folder Structure
 
 /client → React frontend (Vite)
+
 /server → Express backend
+
 .env → Environment variables
+
 README.md → You’re reading it :)
 
 
@@ -45,29 +48,30 @@ README.md → You’re reading it :)
 
 ---
 
-**Security Notes:-**
+## 🔐 Security Notes
 
+- **JWT tokens** stored in `httpOnly` cookies  
+- **Passwords** hashed with `bcrypt`  
+- **OTPs** expire after a timeout  
+- **Cookies** configured with environment-aware `SameSite` and `Secure` attributes  
 
-JWT tokens stored in httpOnly cookies
+---
 
-Passwords hashed with bcrypt
+## 🧪 Future Improvements
 
-OTPs expire after timeout
+- Add **Google OAuth** support  
+- **Rate-limit** OTP requests  
+- Add **resend OTP** functionality  
+- Add UI **themes** (Dark/Light)
 
-Environment-based secure cookies (SameSite, Secure)
+---
 
+## 🧱 Challenges Faced
 
+- **Initial `userId` Undefined (Frontend):**  
+  Resolved by ensuring backend register/login responses included `userId` in the JSON response and frontend accessed it properly.
 
-**🧪 Future Improvements:-**
+- **Authentication Middleware & `req.user` Misalignment (Backend):**  
+  Fixed the `userAuth` middleware to attach `userId` to `req.user` instead of `req.body`, enabling `/api/user/data` to fetch correct user details.
 
-
-Add Google OAuth
-
-Rate-limit OTP requests
-
-Add resend OTP feature
-
-UI themes (Dark/Light)
-
-
-
+---
